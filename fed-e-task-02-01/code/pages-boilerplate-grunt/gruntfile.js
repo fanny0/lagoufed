@@ -1,5 +1,5 @@
 // 实现这个项目的构建任务
-
+const sass = require('sass')
 const loadGruntTasks = require('load-grunt-tasks')
 
 module.exports = grunt => {
@@ -15,8 +15,9 @@ module.exports = grunt => {
             },
             main: {
               files: {
-                src: './src/styles/*.scss',
-                dest: './temp/styles/main.css'
+                'temp/css/main.css': 'src/assets/styles/main.scss',
+                'temp/css/_icons.css': 'src/assets/styles/_icons.scss',
+                'temp/css/_variables.css': 'src/assets/styles/_variables.scss'
               }
             }
           },
@@ -27,8 +28,7 @@ module.exports = grunt => {
             },
             main: {
               files: {
-                src: './src/scripts/*.js',
-                dest: './temp/scripts/main.js'
+                'temp/js/main.js': 'src/assets/scripts/main.js'
               }
             }
           },
@@ -40,6 +40,9 @@ module.exports = grunt => {
             css: {
               files: ['src/scss/*.scss'],
               tasks: ['sass']
+            },
+            html: {
+                
             }
           },
           //js压缩
@@ -84,6 +87,7 @@ module.exports = grunt => {
     })
 
     loadGruntTasks(grunt)
-    grunt.registerTask('compile', ['sass', 'babel', 'watch'])
+    grunt.registerTask('clean', 'clean')
+    grunt.registerTask('devlop', ['sass', 'babel', 'watch'])
     grunt.registerTask('build', ['sass', 'babel', 'watch'])
 }
