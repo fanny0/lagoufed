@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>堆块照监控内存</title>
+</head>
+<body>
+    <button id="btn">Add</button>
+    <input type="button" value="btn" id="btn1">
+    <input type="button" value="btn" id="btn2">
+    <input type="button" value="btn" id="btn3">
+    <p>1111</p>
+    <input type="button" value="btn" id="btn4">
+    <input type="button" value="btn" id="btn5">
+    <input type="button" value="btn" id="btn6">
+    <p>222</p>
+    <input type="button" value="btn" id="btn7">
+    <input type="button" value="btn" id="btn8">
+    <input type="button" value="btn" id="btn9">
+
+</body>
+<script>
+    var temEle
+
+    function fn() {
+        var ul = document.createElement('ul')
+        for (var i = 0; i< 10; i++) {
+            var li = document.createElement('li')
+            ul.appendChild(li)
+        }
+        temEle = ul
+
+        // ul = null
+    }
+
+    document.getElementById('btn').addEventListener('click', fn)
+
+    function getBtn() {
+        let oBtn1 = document.getElementById('btn1')
+        let oBtn3 = document.getElementById('btn3')
+        let oBtn5 = document.getElementById('btn5')
+        let oBtn2 = document.getElementById('btn2')
+        let oBtn7 = document.getElementById('btn7')
+        let oBtn9 = document.getElementById('btn9')
+    }
+
+    function getBtn() {
+        let obj = document
+        let oBtn1 = obj.getElementById('btn1')
+        let oBtn3 = obj.getElementById('btn3')
+        let oBtn5 = obj.getElementById('btn5')
+        let oBtn2 = obj.getElementById('btn2')
+        let oBtn7 = obj.getElementById('btn7')
+        let oBtn9 = obj.getElementById('btn9')
+    }
+   
+</script>
+</html>
